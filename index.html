@@ -20,7 +20,7 @@
          font-family: Georgia, "Times New Roman", serif; padding:40px 16px; }
   main { max-width:640px; text-align:center; }
   h1 { font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:400; font-size:clamp(72px, 20vw, 150px); margin:0; color:var(--accent); line-height:1; }
-  .titolo { display:inline-block; }
+  .titolo h1, .tag span { display:inline-block; }
   .tag { color:var(--accent); font-style:italic; white-space:nowrap; margin:10px 0 0; font-size:30px; line-height:1.1; }
   .sub { font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; color:var(--fg) !important; font-size:18px; color:var(--dim); margin:12px 0 24px; letter-spacing:.08em; text-transform:uppercase; }
   p { font-size:19px; line-height:1.6; margin:0 0 20px; }
@@ -60,10 +60,10 @@ var s=document.createElement("span");s.className="star sirio";s.style.left="72%"
 <svg id="monti" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true"><path d="M0 220 L180 100 L330 200 L520 0 L700 170 L860 90 L1000 230 L1000 420 L0 420 Z" fill="#0c1120"/><circle cx="520" cy="-6" r="3" fill="#ffb45a"/></svg>
 <main>
   <div class="titolo"><h1>WOW!</h1>
-  <div class="tag">Blink If You Hear Me</div></div>
+  <div class="tag"><span>Blink If You Hear Me</span></div></div>
   <script>
-  (function(){function f(){var h=document.querySelector("h1"),t=document.querySelector(".tag");t.style.fontSize="30px";
-  t.style.fontSize=(30*h.getBoundingClientRect().width/t.getBoundingClientRect().width)+"px";}
+  (function(){function f(){var h=document.querySelector("h1"),t=document.querySelector(".tag span"),d=document.querySelector(".tag");d.style.fontSize="30px";
+  d.style.fontSize=(30*h.getBoundingClientRect().width/t.getBoundingClientRect().width)+"px";}
   f();window.addEventListener("resize",f);if(document.fonts)document.fonts.ready.then(f);})();
   </script>
   <div class="sub">A paper-animated feature by Stefano Bertelli</div>
