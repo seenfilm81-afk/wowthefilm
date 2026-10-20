@@ -13,20 +13,30 @@
 <meta property="og:url" content="https://wowthefilm.com/">
 <meta property="og:type" content="website">
 <style>
-  :root { --bg:#0b0d1a; --fg:#f3efe4; --dim:#a9a6b8; --accent:#ffcf3f; }
+  :root { --bg:#111829; --fg:#f3efe4; --dim:#a3a8b8; --accent:#e3a62b; }
   * { box-sizing:border-box; }
   body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-         background:radial-gradient(ellipse at 50% 20%, #1c2045 0%, var(--bg) 70%); color:var(--fg);
+         background:var(--bg); color:var(--fg);
          font-family: Georgia, "Times New Roman", serif; padding:40px 16px; }
   main { max-width:640px; text-align:center; }
-  h1 { font-size:clamp(64px, 18vw, 140px); margin:0; letter-spacing:.04em; color:var(--accent); line-height:1; }
-  .tag { font-size:clamp(22px, 5.5vw, 34px); font-style:italic; margin:14px 0 0; letter-spacing:.02em; }
-  .sub { font-size:18px; color:var(--dim); margin:12px 0 40px; letter-spacing:.08em; text-transform:uppercase; }
+  h1 { font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:400; font-size:clamp(72px, 20vw, 150px); margin:0; color:var(--accent); line-height:1; }
+  .titolo { display:inline-block; }
+  .tag { color:var(--accent); font-style:italic; white-space:nowrap; margin:10px 0 0; font-size:30px; line-height:1.1; }
+  .sub { font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; color:var(--fg) !important; font-size:18px; color:var(--dim); margin:12px 0 24px; letter-spacing:.08em; text-transform:uppercase; }
   p { font-size:19px; line-height:1.6; margin:0 0 20px; }
   .facts { color:var(--dim); font-size:16px; }
   .status { display:inline-block; margin:24px 0; padding:6px 14px; border:1px solid var(--dim); border-radius:20px; font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); }
   a { color:var(--accent); }
   footer { margin-top:40px; font-size:15px; color:var(--dim); }
+  .sirio { width:9px !important; height:9px !important; box-shadow:0 0 0 5px rgba(255,255,255,.18), 0 0 14px #fff; opacity:1; animation:sirio 3s ease-in-out infinite !important; }
+  @keyframes sirio { 0%,100% { opacity:1; } 50% { opacity:.35; } }
+  #monti { position:fixed; left:0; right:0; bottom:0; width:100%; height:42vh; z-index:0; pointer-events:none; }
+  .line { font-style:italic; color:var(--fg); margin:0 0 36px; }
+  #stars { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+  .star { position:absolute; border-radius:50%; background:#fff; opacity:var(--o); }
+  @keyframes blink { 0%,100% { opacity:.15; } 50% { opacity:1; box-shadow:0 0 6px #fff; } }
+  @media (prefers-reduced-motion: reduce) { .sirio { animation:none !important; } }
+  main { position:relative; z-index:1; }
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Movie","name":"WOW! Blink If You Hear Me","alternateName":["WOW!","WOW! the film"],"url":"https://wowthefilm.com/",
@@ -38,10 +48,26 @@
 </script>
 </head>
 <body>
+<div id="stars" aria-hidden="true"></div>
+<script>
+(function(){var b=document.getElementById("stars"),n=window.innerWidth<700?90:180;
+for(var i=0;i<n;i++){var e=document.createElement("span"),z=Math.random()<.85?1+Math.random():2+Math.random()*1.5;
+e.className="star";e.style.left=Math.random()*100+"%";e.style.top=Math.random()*100+"%";
+e.style.width=e.style.height=z+"px";e.style.setProperty("--o",(.3+Math.random()*.6).toFixed(2));
+b.appendChild(e);}
+var s=document.createElement("span");s.className="star sirio";s.style.left="72%";s.style.top="20%";b.appendChild(s);})();
+</script>
+<svg id="monti" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true"><path d="M0 220 L180 100 L330 200 L520 0 L700 170 L860 90 L1000 230 L1000 420 L0 420 Z" fill="#0c1120"/><circle cx="520" cy="-6" r="3" fill="#ffb45a"/></svg>
 <main>
-  <h1>WOW!</h1>
-  <div class="tag">Blink If You Hear Me</div>
+  <div class="titolo"><h1>WOW!</h1>
+  <div class="tag">Blink If You Hear Me</div></div>
+  <script>
+  (function(){function f(){var h=document.querySelector("h1"),t=document.querySelector(".tag");t.style.fontSize="30px";
+  t.style.fontSize=(30*h.getBoundingClientRect().width/t.getBoundingClientRect().width)+"px";}
+  f();window.addEventListener("resize",f);if(document.fonts)document.fonts.ready.then(f);})();
+  </script>
   <div class="sub">A paper-animated feature by Stefano Bertelli</div>
+  <p class="line">She searched for the stars all over the world. One was waiting at home.</p>
   <p>A girl from the mountains builds an antenna out of tomato cans to find the real WOW! signal, the 72-second radio transmission picked up in 1977 and never heard again. Her search takes her to the deserts of the world, and teaches her that the most important answers are closer to home.</p>
   <p class="facts">Paper-animated feature, 70–80 minutes · For families, children aged 8 and up, and adults</p>
   <div class="status">In development</div>
