@@ -3,44 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WOW! Looking for a Signal – a paper-animated feature by Stefano Bertelli</title>
-<meta name="description" content="WOW! Looking for a Signal is the new paper-animated feature film by Stefano Bertelli, director of Spacetime Chronicles. In development.">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<title>WOW! – a paper-animated feature by Stefano Bertelli</title>
+<meta name="description" content="WOW! is the new paper-animated feature film by Stefano Bertelli, director of Spacetime Chronicles. In development.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://wowthefilm.com/img/stella.jpg">
 <link rel="canonical" href="https://wowthefilm.com/">
-<meta property="og:title" content="WOW! Looking for a Signal – a paper-animated feature">
+<meta property="og:title" content="WOW! – a paper-animated feature">
 <meta property="og:description" content="The new paper-animated feature by Stefano Bertelli, director of Spacetime Chronicles. In development.">
 <meta property="og:url" content="https://wowthefilm.com/">
 <meta property="og:type" content="website">
 <style>
-  :root { --bg:#111829; --fg:#f3efe4; --dim:#a3a8b8; --accent:#e3a62b; }
+  :root { --bg:#0d2f5c; --fg:#f6f1e4; --dim:#b9c6dc; --accent:#f2a83b; --carta:#d9cfb4; --blu:#1f6fe0; }
   * { box-sizing:border-box; }
-  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-         background:var(--bg); color:var(--fg);
-         font-family: Georgia, "Times New Roman", serif; padding:40px 16px; }
-  main { max-width:640px; text-align:center; }
-  h1 { font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:700; font-size:clamp(72px, 20vw, 150px); margin:0; color:var(--accent); line-height:1; }
-  .titolo h1, .tag span { display:inline-block; }
-  .tag { color:var(--accent); font-style:italic; white-space:nowrap; margin:10px 0 0; font-size:30px; line-height:1.1; }
-  .sub { font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; color:var(--fg) !important; font-size:18px; color:var(--dim); margin:12px 0 24px; letter-spacing:.08em; text-transform:uppercase; }
-  p { font-size:19px; line-height:1.6; margin:0 0 20px; }
+  html,body { margin:0; background:var(--bg); color:var(--fg); font-family:Georgia,"Times New Roman",serif; }
+  img { display:block; max-width:100%; }
+  .hero { position:relative; min-height:100vh; min-height:100svh; background:#1e6fd8 url(img/notte.jpg) center bottom/cover no-repeat; display:flex; flex-direction:column; align-items:center; padding:9vh 16px 0; text-align:center; }
+  .hero h1 { margin:0; width:min(440px,70vw); }
+  .hero h1 img { width:100%; filter:drop-shadow(0 3px 0 rgba(0,0,0,.18)); }
+  .tag { color:#fff; font-style:italic; font-size:clamp(22px,4.4vw,36px); margin:14px 0 6px; text-shadow:0 2px 10px rgba(0,30,80,.45); }
+  .sub { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; font-size:clamp(12px,2.2vw,15px); letter-spacing:.14em; text-transform:uppercase; color:#fff; text-shadow:0 1px 8px rgba(0,30,80,.5); }
+  .giu { position:absolute; bottom:22px; left:50%; transform:translateX(-50%); color:#fff; opacity:.8; font-size:26px; text-decoration:none; }
+  section { max-width:720px; margin:0 auto; padding:72px 16px; text-align:center; }
+  .line { font-style:italic; font-size:clamp(22px,3.6vw,30px); line-height:1.35; margin:0 0 28px; color:var(--accent); }
+  p { font-size:19px; line-height:1.65; margin:0 0 20px; }
   .facts { color:var(--dim); font-size:16px; }
-  .status { display:inline-block; margin:24px 0; padding:6px 14px; border:1px solid var(--dim); border-radius:20px; font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:var(--dim); }
+  .status { display:inline-block; margin:18px 0 6px; padding:6px 14px; border:1px solid var(--dim); border-radius:20px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
+  .foto { display:grid; grid-template-columns:1fr; gap:10px; padding:0 10px; max-width:1500px; margin:0 auto; }
+  .foto figure { margin:0; overflow:hidden; border-radius:3px; }
+  .foto img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+  @media (min-width:800px) { .foto { grid-template-columns:1fr 1fr; } .foto .largo { grid-column:1 / -1; } .foto .alto img { height:100%; } }
+  .carta { background:var(--carta); color:#1b3d70; }
+  .carta a { color:var(--blu); }
+  .carta .facts { color:#4a5d7d; }
   a { color:var(--accent); }
-  footer { margin-top:40px; font-size:15px; color:var(--dim); }
-  .sirio { width:9px !important; height:9px !important; box-shadow:0 0 0 5px rgba(255,255,255,.18), 0 0 14px #fff; opacity:1; animation:none !important; }
-  @keyframes sirio { 0% { opacity:.1; } 3% { opacity:1; } 6% { opacity:.1; } 9% { opacity:1; } 12% { opacity:.1; } 15%,100% { opacity:1; } }
-  #monti { position:fixed; left:0; right:0; bottom:0; width:100%; height:42vh; z-index:0; pointer-events:none; }
-  .line { font-style:italic; color:var(--fg); margin:0 0 36px; }
-  #stars { position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
-  .star { position:absolute; border-radius:50%; background:#fff; opacity:var(--o); }
-  @keyframes blink { 0%,100% { opacity:.15; } 50% { opacity:1; box-shadow:0 0 6px #fff; } }
-  @media (prefers-reduced-motion: reduce) { .sirio { animation:none !important; } }
-  main { position:relative; z-index:1; }
+  footer { padding:28px 16px 40px; text-align:center; font-size:15px; color:#4a5d7d; }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Movie","name":"WOW! Looking for a Signal","alternateName":["WOW!","WOW! the film"],"url":"https://wowthefilm.com/",
+{"@context":"https://schema.org","@type":"Movie","name":"WOW!","alternateName":["WOW! the film"],"url":"https://wowthefilm.com/",
 "description":"A girl from the mountains builds an antenna out of tomato cans to find the real WOW! signal, the 72-second radio transmission picked up in 1977 and never heard again. A paper-animated feature in development.",
+"image":"https://wowthefilm.com/img/stella.jpg",
 "genre":["Animation","Comedy","Family"],"inLanguage":"en",
 "director":{"@type":"Person","name":"Stefano Bertelli","url":"https://www.seenfilm.com/"},
 "author":{"@type":"Person","name":"Stefano Bertelli"},
@@ -48,31 +52,29 @@
 </script>
 </head>
 <body>
-<div id="stars" aria-hidden="true"></div>
-<script>
-(function(){var b=document.getElementById("stars"),n=window.innerWidth<700?90:180;
-for(var i=0;i<n;i++){var e=document.createElement("span"),z=Math.random()<.85?1+Math.random():2+Math.random()*1.5;
-e.className="star";e.style.left=Math.random()*100+"%";e.style.top=Math.random()*100+"%";
-e.style.width=e.style.height=z+"px";e.style.setProperty("--o",(.3+Math.random()*.6).toFixed(2));
-b.appendChild(e);}
-var s=document.createElement("span");s.className="star sirio";s.style.left="72%";s.style.top="20%";b.appendChild(s);})();
-</script>
-<svg id="monti" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true"><path d="M0 220 L180 100 L330 200 L520 0 L700 170 L860 90 L1000 230 L1000 420 L0 420 Z" fill="#0c1120"/><circle cx="520" cy="-6" r="3" fill="#ffb45a"/></svg>
-<main>
-  <div class="titolo"><h1>WOW!</h1>
-  <div class="tag"><span>Looking for a Signal</span></div></div>
-  <script>
-  (function(){function f(){var h=document.querySelector("h1"),t=document.querySelector(".tag span"),d=document.querySelector(".tag");d.style.fontSize="30px";
-  d.style.fontSize=(30*h.getBoundingClientRect().width/t.getBoundingClientRect().width)+"px";}
-  f();window.addEventListener("resize",f);if(document.fonts)document.fonts.ready.then(f);})();
-  </script>
+<header class="hero">
+  <h1><img src="favicon-512.png" alt="WOW!" width="512" height="512" style="aspect-ratio:auto"></h1>
   <div class="sub">A paper-animated feature by Stefano Bertelli</div>
+  <a class="giu" href="#storia" aria-label="Scroll down">&#8964;</a>
+</header>
+<section id="storia">
   <p class="line">She searched for the stars all over the world. One was waiting at home.</p>
   <p>A girl from the mountains builds an antenna out of tomato cans to find the real WOW! signal, the 72-second radio transmission picked up in 1977 and never heard again. Her search takes her to the deserts of the world, and teaches her that the most important answers are closer to home.</p>
   <p class="facts">Paper-animated feature, 70–80 minutes · For families, children aged 8 and up, and adults</p>
   <div class="status">In development</div>
-  <p class="facts">From the director of <a href="https://spacetimechronicles.com">Spacetime Chronicles</a>, selected at Annecy, Sitges and Fantasia 2026.</p>
+</section>
+<div class="foto">
+  <figure class="largo"><img src="img/stella.jpg" alt="Two girls and a dog sit on a paper hill, looking at a star" loading="lazy" width="1920" height="1080"></figure>
+  <figure><img src="img/casa.jpg" alt="A paper village in the mountains with a dog shelter" loading="lazy" width="1920" height="1080"></figure>
+  <figure><img src="img/gallo.jpg" alt="A paper rooster with big blue eyes" loading="lazy" width="1920" height="1080"></figure>
+  <figure><img src="img/auto.jpg" alt="An orange paper car on a mountain road" loading="lazy" width="1920" height="1080"></figure>
+  <figure><img src="img/titolo.jpg" alt="The WOW! title cut out of blue paper" loading="lazy" width="1920" height="1080"></figure>
+</div>
+<div class="carta">
+  <section>
+    <p class="facts">From the director of <a href="https://spacetimechronicles.com">Spacetime Chronicles</a>, selected at Annecy, Sitges and Fantasia 2026.</p>
+  </section>
   <footer><a href="https://seenfilm.com">Seenfilm</a> · <a href="mailto:stefano@seenfilm.com">stefano@seenfilm.com</a></footer>
-</main>
+</div>
 </body>
 </html>
