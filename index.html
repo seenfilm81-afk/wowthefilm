@@ -31,10 +31,8 @@
   p { font-size:19px; line-height:1.65; margin:0 0 20px; }
   .facts { color:var(--dim); font-size:16px; }
   .status { display:inline-block; margin:18px 0 6px; padding:6px 14px; border:1px solid var(--dim); border-radius:20px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
-  .foto { display:grid; grid-template-columns:1fr; gap:10px; padding:0 10px; max-width:1500px; margin:0 auto; }
-  .foto figure { margin:0; overflow:hidden; border-radius:3px; }
+  .foto figure { margin:0; }
   .foto img { width:100%; aspect-ratio:16/9; object-fit:cover; }
-  @media (min-width:800px) { .foto { grid-template-columns:1fr 1fr; } .foto .largo { grid-column:1 / -1; } .foto .alto img { height:100%; } }
   .carta { background:var(--carta); color:#1b3d70; }
   .carta a { color:var(--blu); }
   .carta .facts { color:#4a5d7d; }
@@ -64,7 +62,7 @@
   <div class="status">In development</div>
 </section>
 <div class="foto">
-  <figure class="largo"><img src="img/stella.jpg" alt="Two girls and a dog sit on a paper hill, looking at a star" loading="lazy" width="1920" height="1080"></figure>
+  <figure><img src="img/stella.jpg" alt="Two girls and a dog sit on a paper hill, looking at a star" loading="lazy" width="1920" height="1080"></figure>
   <figure><img src="img/casa.jpg" alt="A paper village in the mountains with a dog shelter" loading="lazy" width="1920" height="1080"></figure>
   <figure><img src="img/gallo.jpg" alt="A paper rooster with big blue eyes" loading="lazy" width="1920" height="1080"></figure>
   <figure><img src="img/auto.jpg" alt="An orange paper car on a mountain road" loading="lazy" width="1920" height="1080"></figure>
