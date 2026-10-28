@@ -32,12 +32,12 @@
   .facts { color:var(--dim); font-size:16px; }
   .status { display:inline-block; margin:18px 0 6px; padding:6px 14px; border:1px solid var(--dim); border-radius:20px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; }
   .foto figure { margin:0; }
-  .foto img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+  .foto img { width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
   .carta { background:var(--carta); color:#1b3d70; }
   .carta a { color:var(--blu); }
   .carta .facts { color:#4a5d7d; }
   a { color:var(--accent); }
-  @media (max-aspect-ratio:1/1) { .hero { min-height:0; background-size:100% auto; padding:12vh 16px calc(56.25vw + 8vh); } .giu { display:none; } }
+  @media (max-aspect-ratio:1/1) { .hero { min-height:0; background-size:100% auto; padding:8vh 16px calc(56.25vw + 4vh); } .giu { display:none; } }
   footer { padding:28px 16px 40px; text-align:center; font-size:15px; color:#4a5d7d; }
 </style>
 <script type="application/ld+json">
@@ -52,7 +52,7 @@
 </head>
 <body>
 <header class="hero">
-  <h1><img src="favicon-512.png" alt="WOW!" width="512" height="512" style="aspect-ratio:auto"></h1>
+  <h1><img src="img/wow_giallo.png" alt="WOW!" width="512" height="512" style="aspect-ratio:auto"></h1>
   <div class="sub">A paper-animated feature by Stefano Bertelli</div>
   <a class="giu" href="#storia" aria-label="Scroll down">&#8964;</a>
 </header>
